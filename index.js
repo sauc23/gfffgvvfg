@@ -7,7 +7,7 @@ const path = require("path");
 const httpServer = http.createServer();
 const bareServer = createBareServer("/");
 
-on("request", (req, res) => {
+httpServer.on("request", (req, res) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeRequest(req, res);
   } else {
